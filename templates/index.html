@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url('1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+
+    <title>Audio Input</title>
+</head>
+
+<body>
+    <marquee behaviour="alternate" scrollamounnt="20">
+        <font color="#7FFF00" size="70px" face="arial black">AUDIO CLASSIFICATION OF DIFFERENT BIRDS SPECIES </font>
+    </marquee>
+    <h3>
+        <font color="white" face="arial black">SELECT AUDIO</font>
+    </h3>
+
+    <p>
+        {% with messages = get_flashed_messages() %} {% if messages %} Label: {{ messages[0] }} {% endif %} {% endwith %}
+    </p>
+    <form method="post" action="/file" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="audio_file" autocomplete="off" required>
+            </p>
+        </dl>
+        <h3>
+            <font color="white" face="arial black"><input type="submit" value="Submit"></font>
+        </h3>
+    </form>
+</body>
+
+</html>
